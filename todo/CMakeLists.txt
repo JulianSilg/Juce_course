@@ -62,19 +62,19 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 endif()
 
 # Adds a plugin target.
-set(TREMOLO_PLUGIN_NAME "TODO: set your plugin name")
+set(TREMOLO_PLUGIN_NAME "Tremolito")
 juce_add_plugin(
   TremoloCoursePlugin
   PRODUCT_NAME
     ${TREMOLO_PLUGIN_NAME}
   VERSION
-    # TODO: add version
+    0.0.0 # 0 forces AU hosts to always refresh
   COMPANY_NAME
-    # TODO: add company
+    "Julianes"
   PLUGIN_MANUFACTURER_CODE
-    # TODO: add plugin manufacturer code
+    Jues
   PLUGIN_CODE
-    # TODO: add plugin code
+    Trio
   FORMATS
     Standalone
     AU
