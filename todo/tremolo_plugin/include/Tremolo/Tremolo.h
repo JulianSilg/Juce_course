@@ -31,6 +31,12 @@ public:
     lfoToSet = waveform;
   }
 
+  void setModulationRate (float rateHz) {
+    for (auto& lfo : lfos) {
+      lfo.setFrequency(rateHz);
+    }
+  }
+
   void process(juce::AudioBuffer<float>& buffer) noexcept {
     updateLfoWaveform();
     // for each frame

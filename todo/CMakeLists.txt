@@ -125,6 +125,12 @@ target_compile_options(tremolo_plugin INTERFACE "${PROJECT_WARNINGS_CXX}")
 
 target_link_libraries(tremolo_plugin INTERFACE tremolo::tremolo_plugin_assets)
 
+target_link_libraries(tremolo_plugin
+        INTERFACE
+        juce::juce_audio_processors
+        juce::juce_audio_utils
+)
+
 target_link_libraries(
   TremoloCoursePlugin
   PRIVATE
