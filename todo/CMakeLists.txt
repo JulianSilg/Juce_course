@@ -114,6 +114,7 @@ add_library(tremolo::tremolo_plugin_assets ALIAS tremolo_plugin_assets)
 
 juce_add_module(tremolo_plugin ALIAS_NAMESPACE tremolo)
 
+
 # Additional definitions required by all users of this module.
 target_compile_definitions(tremolo_plugin
   INTERFACE
@@ -127,7 +128,13 @@ target_link_libraries(tremolo_plugin INTERFACE tremolo::tremolo_plugin_assets)
 
 target_link_libraries(tremolo_plugin
         INTERFACE
+        juce::juce_core
+        juce::juce_graphics          # Faltaba (para <juce_graphics/juce_graphics.h>)
+        juce::juce_gui_basics        # Faltaba (para <juce_gui_basics/juce_gui_basics.h>)
         juce::juce_audio_processors
+        juce::juce_audio_basics      # Faltaba (para <juce_audio_basics/juce_audio_basics.h>)
+        juce::juce_events            # Faltaba (para <juce_events/juce_events.h>)
+        juce::juce_dsp               # Faltaba (para <juce_dsp/juce_dsp.h>)
         juce::juce_audio_utils
 )
 
